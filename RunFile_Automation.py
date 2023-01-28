@@ -1,5 +1,13 @@
 # Getting all the details about a specific address and storing it into database and xls files
 
+# street = '451 clear blue way'  # taken from community builder list
+# city = 'mcdonough'  # taken from community builder list
+# short_state = 'GA'  # taken from community builder list
+# state = 'Georgia'  # input
+# 4050 Woods Edge Cir Riviera Beach FL
+# randomid = 'alex2'
+
+
 from Analyzer_core_classes_functions import *
 
 
@@ -78,8 +86,6 @@ def address_data_automate_tool(street, city, short_state, state, randomid):
     print(dict_crime_SQL)
     crime.closeBrowser()
     print('Crime Run ended')
-
-
     print('printing all dictionaries before copy to MySQL')
     print(dict_block_SQL)
     print(dict_city_SQL)
@@ -87,7 +93,10 @@ def address_data_automate_tool(street, city, short_state, state, randomid):
     print(dict_crime_SQL)
     print(dict_schools_SQL)
     addr = street + ' ' + city + ' ' + short_state
+    mySQL(randomid, addr, dict_block_SQL, dict_city_SQL, dict_metro_SQL, dict_crime_SQL, dict_schools_SQL)
 
+
+def mySQL(randomid, addr, dict_block_SQL, dict_city_SQL, dict_metro_SQL, dict_crime_SQL, dict_schools_SQL):
     # MySQL
     print('trying to copy to MySQL')
     try:
@@ -162,10 +171,9 @@ def address_data_automate_tool(street, city, short_state, state, randomid):
         print('failed to connect to sql')
 
 
-# street = '451 clear blue way'  # taken from community builder list
-# city = 'mcdonough'  # taken from community builder list
-# short_state = 'GA'  # taken from community builder list
-# state = 'Georgia'  # input
-# 4050 Woods Edge Cir Riviera Beach FL
-# randomid = 'alex2'
+
+
+
+
+
 

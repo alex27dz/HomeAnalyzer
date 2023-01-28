@@ -1,7 +1,7 @@
 from flask import Flask, request
 from RunFile_Automation import *
 import json
-# from flask_cors import CORS, cross_origin  # solution for error: cross origin
+
 
 '''
 # Function under /address tag operating only after POST or GET requests 
